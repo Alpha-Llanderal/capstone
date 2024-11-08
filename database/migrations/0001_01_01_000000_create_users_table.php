@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); // Use id() instead of increments('id')
-            $table->string('first_name'); // snake_case
-            $table->string('last_name'); // snake_case
+            $table->id();
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->date('birth_date')->nullable(); // snake_case
-            $table->string('profile_picture')->nullable(); // snake_case
-            $table->boolean('is_self_pay')->default(false); // snake_case with is_ prefix for boolean
+            $table->date('birth_date')->nullable();
+            $table->string('profile_picture')->nullable(); 
+            $table->boolean('is_self_pay')->default(false);
             $table->string('address')->nullable();
-            $table->string('phone_number')->nullable(); // snake_case
+            $table->string('phone_number')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
@@ -43,7 +43,7 @@ class AddProfilePictureToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_picture')->nullable(); // snake_case
+            $table->string('profile_picture')->nullable();
         });
     }
 

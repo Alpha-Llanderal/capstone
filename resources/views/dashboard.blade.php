@@ -26,7 +26,7 @@
                     <!-- Profile Picture and Personal Details -->
                     <div class="row">
                         <div class="col-md-3 text-center">
-                            <!-- Profile Picture Upload -->
+                            <!-- Profile Picture Upload - Matches profile_picture column -->
                             <form action="{{ route('profile.upload') }}" method="POST" enctype="multipart/form-data" id="profilePictureForm">
                                 @csrf
                                 <img id="profilePicture" src="{{ auth()->user()->profile_picture ?? 'https://via.placeholder.com/150' }}" 
@@ -41,42 +41,34 @@
                         </div>
                         <div class="col-md-9">
                             <div class="row">
+                                <!-- All input fields match exactly with migration columns -->
                                 <div class="col-sm-6 mb-3">
-                                    <label for="firstName" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="firstName" value="{{ auth()->user()->firstName }}" placeholder="First Name">
+                                    <label for="first_name" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="first_name" name="first_name" value="{{ auth()->user()->first_name }}" required>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <label for="lastName" class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" id="lastName" value="{{ auth()->user()->lastName }}" placeholder="Last Name">
+                                    <label for="last_name" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="last_name" name="last_name" value="{{ auth()->user()->last_name }}" required>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <label for="birthDate" class="form-label">Date of Birth *</label>
-                                    <input type="date" class="form-control" id="birthDate" value="{{ auth()->user()->birthDate?->format('Y-m-d') }}" placeholder="DD-MM-YYYY">
+                                    <label for="birth_date" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="birth_date" name="birth_date" value="{{ auth()->user()->birth_date?->format('Y-m-d') }}">
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <label for="email" class="form-label">Email *</label>
-                                    <input type="email" class="form-control" id="email" value="{{ auth()->user()->email }}" placeholder="Email Address">
+                                    <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" required>
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <label for="address" class="form-label">Address *</label>
-                                    <input type="address" class="form-control" id="address" value="{{ auth()->user()->address }}" placeholder="Address">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address" name="address" value="{{ auth()->user()->address }}">
                                 </div>
                                 <div class="col-sm-6 mb-3">
-                                    <label for="phoneNumber" class="form-label">Phone Number *</label>
-                                    <input type="phoneNumber" class="form-control" id="phoneNumber" value="{{ auth()->user()->phoneNumber }}" placeholder="Phone Number">
+                                    <label for="phone_number" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone_number" name="phone_number" value="{{ auth()->user()->phone_number }}">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                        <!-- Save Changes Button -->
-                        <div class="col-12 d-flex justify-content-end mt-3">
-                            <button class="btn btn-primary" id="saveChangesButton">Save Changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End of Personal Information Section -->
 
         <!-- INSURANCE SECTION -->

@@ -24,15 +24,15 @@
                             <!-- First Name Input -->
                             <div class="form-floating mb-3">
                                 <input type="text" 
-                                       id="firstName"
-                                       class="form-control @error('firstName') is-invalid @enderror" 
-                                       name="firstName" 
-                                       value="{{ old('firstName') }}" 
+                                       id="first_name"
+                                       class="form-control @error('first_name') is-invalid @enderror" 
+                                       name="first_name" 
+                                       value="{{ old('first_name') }}" 
                                        placeholder="Enter your first name" 
                                        required 
                                        autofocus>
-                                <label for="firstName">First Name</label>
-                                @error('firstName')
+                                <label for="first_name">First Name</label>
+                                @error('first_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -40,14 +40,14 @@
                             <!-- Last Name Input -->
                             <div class="form-floating mb-3">
                                 <input type="text" 
-                                       id="lastName"
-                                       class="form-control @error('lastName') is-invalid @enderror" 
-                                       name="lastName" 
-                                       value="{{ old('lastName') }}" 
+                                       id="last_name"
+                                       class="form-control @error('last_name') is-invalid @enderror" 
+                                       name="last_name" 
+                                       value="{{ old('last_name') }}" 
                                        placeholder="Enter your last name" 
                                        required>
-                                <label for="lastName">Last Name</label>
-                                @error('lastName')
+                                <label for="last_name">Last Name</label>
+                                @error('last_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
